@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Happy Birthday Lara 🎂</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to bottom, #ffe5ec, #ffc2d1);
+      color: #4b1c3f;
+      text-align: center;
+      overflow-x: hidden;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      background: white;
+      border-radius: 25px;
+      padding: 30px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+      position: relative;
+      z-index: 1;
+    }
+
+    h1 {
+      font-size: 3em;
+      color: #d63384;
+    }
+
+    p {
+      font-size: 1.2em;
+      line-height: 1.8em;
+    }
+
+    .heart {
+      font-size: 2.5em;
+      color: #ff3366;
+      animation: heartbeat 1.2s infinite;
+    }
+
+    @keyframes heartbeat {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.2); }
+    }
+
+    .footer {
+      margin-top: 30px;
+      font-size: 0.9em;
+      color: #666;
+    }
+
+    .gallery {
+      margin-top: 30px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px;
+    }
+
+    .gallery img {
+      width: 200px;
+      height: auto;
+      border-radius: 15px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    /* Floating hearts */
+    .floating-heart {
+      position: fixed;
+      width: 20px;
+      height: 20px;
+      background-color: #ff5c8a;
+      bottom: -20px;
+      animation: floatHeart 6s infinite ease-in;
+      opacity: 0.7;
+      border-radius: 50%;
+      z-index: 0;
+    }
+
+    @keyframes floatHeart {
+      0% {
+        transform: translateY(0) scale(1);
+        opacity: 0.7;
+      }
+      100% {
+        transform: translateY(-100vh) scale(1.5);
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <audio autoplay loop>
+    <source src="music.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+
+  <div class="container">
+    <div class="heart">❤️</div>
+    <h1>Happy Birthday Lara 🎉</h1>
+    <p>
+      Even in our imperfect moments,<br />
+      my love for you stays perfect. 💖<br />
+      Happy birthday kuttaa,<br />
+      my heart still beats for you.
+    </p>
+    <p class="heart">💕</p>
+    <p>
+      May your day be filled with all the joy you bring into my life,<br />
+      and may your smile never fade.
+    </p>
+
+    <div class="gallery">
+      <img src="images/photo1.jpg" alt="Memory 1" />
+      <img src="images/photo2.jpg" alt="Memory 2" />
+      <img src="images/photo3.jpg" alt="Memory 3" />
+      <!-- Add more photos as needed -->
+    </div>
+
+    <div class="footer">
+      — With all my heart,<br />
+      benoni
+    </div>
+  </div>
+
+  <!-- Floating hearts -->
+  <script>
+    function createHeart() {
+      const heart = document.createElement('div');
+      heart.className = 'floating-heart';
+      heart.style.left = Math.random() * 100 + 'vw';
+      heart.style.animationDuration = (4 + Math.random() * 3) + 's';
+      document.body.appendChild(heart);
+
+      setTimeout(() => {
+        heart.remove();
+      }, 7000);
+    }
+
+    setInterval(createHeart, 500);
+  </script>
+</body>
+</html>
